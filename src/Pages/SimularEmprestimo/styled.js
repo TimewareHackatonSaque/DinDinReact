@@ -9,3 +9,8 @@ export const TituloLogin = styled.h1`
     margin: 0px 0px 0px 49px;
 `;
 
+export const DivLine = styled.div`
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  width: 100%; /* Ocupa toda a largura disponível */
+`

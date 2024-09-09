@@ -1,4 +1,5 @@
 import IconLeft from '../../components/IconLeft/left';
+import LineGradiente from '../../components/line/line';
 import Espaco from '../../components/space/space';
 import FormSimular from './FormSimular/formSimular';
 import * as C from './styled';
@@ -17,7 +18,15 @@ function SimularEmp(){
         </C.TituloLogin>
       </div>
 
-      <line></line>
+      <Espaco height="20px"/>
+
+      <C.DivLine>
+        <LineGradiente
+          width="80vw"
+          height="2px"
+          backgroudColor="linear-gradient(270deg, #048F44 0%, #F69F00 100%)"
+        />
+      </C.DivLine>
 
       <Espaco height="40px"></Espaco>
 
