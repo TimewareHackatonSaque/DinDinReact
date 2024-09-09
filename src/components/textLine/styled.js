@@ -6,4 +6,6 @@ export const TextP = styled.p`
  margin: ${({margin}) => margin};
  font-weight: ${({fontWeight}) => fontWeight};
  font-family: ${({ fontFamily }) => fontFamily};
+ justify-content: ${({ justFy }) => justFy};
+ display:${({ display }) => display}
 `

@@ -19,6 +19,8 @@ function SimularEmp(){
 
       <line></line>
 
+      <Espaco height="40px"></Espaco>
+
       <FormSimular></FormSimular>
 
       

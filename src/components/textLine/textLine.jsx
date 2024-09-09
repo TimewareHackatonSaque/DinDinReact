@@ -1,6 +1,6 @@
 import * as C from './styled';
 
-function TextLine({margin, fontSize, color, fontWeight, children, fontFamily}){
+function TextLine({display, justFy, margin, fontSize, color, fontWeight, children, fontFamily}){
   return(
     <>
       <C.TextP
@@ -9,6 +9,8 @@ function TextLine({margin, fontSize, color, fontWeight, children, fontFamily}){
         fontSize={fontSize}
         color={color}
         fontFamily={fontFamily}
+        justFy={justFy}
+        display={display}
       >
         {children}
       </C.TextP>
