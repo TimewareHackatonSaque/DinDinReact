@@ -1,4 +1,3 @@
-import { GoChevronLeft } from 'react-icons/go';
 import styled from 'styled-components';
 
 export const DivBody = styled.div`
@@ -12,12 +11,6 @@ export const DivTop = styled.div`
   margin: 56px 32px 0px;
 `;
 
-export const Icon = styled(GoChevronLeft)`
-  color: #373737;
-  height: 24px;
-  font-size: 24px;
-  margin-right: 20px; 
-`;
 
 export const Footer = styled.footer`
   display:flex;

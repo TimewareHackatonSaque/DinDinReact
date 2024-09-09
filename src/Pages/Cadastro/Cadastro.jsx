@@ -1,3 +1,4 @@
+import IconLeft from '../../components/IconLeft/left';
 import Link from '../../components/Links/links';
 import Espaco from "../../components/space/space";
 import TextLine from "../../components/textLine/textLine";
@@ -10,7 +11,7 @@ function Cadastro(){
 
       <C.DivTop>
 
-        <C.Icon/>
+        <IconLeft fontSize="24px" margin="0px 20px 0px 0px"/>
 
         <TextLine fontSize="20px" fontWeight="400" margin="0px" >
           Cadastre-se

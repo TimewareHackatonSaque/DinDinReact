@@ -1,10 +1,10 @@
 
 import './App.css';
-import Cadastro from './Pages/Cadastro/Cadastro';
+import SimularEmp from './Pages/SimularEmprestimo/Simulador';
 
 function App() {
   return (
-      <Cadastro></Cadastro>
+      <SimularEmp></SimularEmp>
   );
 }
 
