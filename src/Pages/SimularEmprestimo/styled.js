@@ -6,6 +6,6 @@ export const TituloLogin = styled.h1`
     color: #373737;
     font-weight: 600;
     margin-bottom: 0px;
-    margin: 0px 0px 0px 49px
+    margin: 0px 0px 0px 49px;
 `;
 
