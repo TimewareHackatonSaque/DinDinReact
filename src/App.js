@@ -1,10 +1,10 @@
 
 import './App.css';
-import Login from './Pages/login/login';
+import Cadastro from './Pages/Cadastro/Cadastro';
 
 function App() {
   return (
-      <Login></Login>
+      <Cadastro></Cadastro>
   );
 }
 
