@@ -13,7 +13,7 @@ const Header = () => {
       {/* Primeira linha com o logo e ícones de usuário e configurações */}
       <C.Row>
         {/* Componente de Logo */}
-        <ImgLogin />
+        <ImgLogin/>
         <C.BtnRight>
           <C.IconWrapper>
             <FaUserAlt size={24} color="white" />  {/* Substituindo o ícone de usuário */}
