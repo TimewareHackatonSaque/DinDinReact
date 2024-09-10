@@ -1,9 +1,11 @@
-import './App.css';
-import Login from './Pages/login/login';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Home from './Pages/Home/home';
 
 function App() {
   return (
-      <Login/>
+    <Router>
+      <Home />
+    </Router>
   );
 }
 
