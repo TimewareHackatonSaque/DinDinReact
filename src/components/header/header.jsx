@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import * as C from './styled';  // Corrigido para 'styled'
 import { FaUserAlt, FaCog, FaEye, FaEyeSlash } from 'react-icons/fa';  // Ícones do react-icons
-import ImgLogin from '../img/imgLogin';  // Importando o logo que é um componente
+import imagem from '../../imagens/logo.png';
 import TextLine from '../textLine/textLine';
+import ImgLogin from '../img/imgLogin';
 
 const Header = () => {
   const [showSaldo, setShowSaldo] = useState(false);
@@ -12,20 +13,25 @@ const Header = () => {
     <C.Header>
       {/* Primeira linha com o logo e ícones de usuário e configurações */}
       <C.Row>
-        {/* Componente de Logo */}
-        <ImgLogin/>
+        <C.LogoWrapper>
+          {/* Componente de Logo */}
+          <ImgLogin image={imagem} />
+        </C.LogoWrapper>
+
         <C.BtnRight>
           <C.IconWrapper>
-            <FaUserAlt size={24} color="white" />  {/* Substituindo o ícone de usuário */}
+            <FaUserAlt size={24} color="white" />  {/* Ícone de usuário */}
           </C.IconWrapper>
-          <FaCog size={24} color="white" />  {/* Substituindo o ícone de configurações */}
+          <FaCog size={24} color="white" />  {/* Ícone de configurações */}
         </C.BtnRight>
       </C.Row>
 
       {/* Segunda linha com saldo e ícone de visualização */}
       <C.Row>
         <C.SaldoValue>
-          <TextLine fontFamily="Poppins, sans-serif" fontSize="16px" color="#FFFFFF" fontWeight="400">Bem vindo(a) ao DogDindin</TextLine>
+          <TextLine fontFamily="Poppins, sans-serif" fontSize="16px" color="#FFFFFF" fontWeight="400">
+            Bem vindo(a) ao DogDindin
+          </TextLine>
           <br />
           {showSaldo
             ? saldo.toLocaleString('pt-BR', {
