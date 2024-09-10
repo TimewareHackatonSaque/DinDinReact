@@ -1,10 +1,14 @@
-
 import './App.css';
-import SimularEmp from './Pages/SimularEmprestimo/Simulador';
+import Cadastro from './Pages/Cadastro/Cadastro';
+import Home from './Pages/Home/home';
+import Login from './Pages/login/login';
+import { BrowserRouter as Router } from 'react-router-dom';  // Importa o BrowserRouter
 
 function App() {
   return (
-      <SimularEmp></SimularEmp>
+    <Router>
+      <Home></Home>
+    </Router>
   );
 }
 
