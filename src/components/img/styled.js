@@ -9,5 +9,6 @@ export const DivImgLogin = styled.div`
 export const ImgPrincipal = styled.img`
     width: 111px;
     height: 116px;
-    filter: ${({ Invert }) => Invert}
+    filter: ${({ Invert }) => Invert};
+    width:${({ width }) => width}
 `;

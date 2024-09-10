@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import ButtonAll from '../../../components/button/buttonAll';
 import LineGradiente from '../../../components/line/line';
 import Espaco from '../../../components/space/space';
@@ -14,7 +13,7 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
 
     return (
       <C.Container>
-        <Logo src="https://via.placeholder.com/150x50?text=BANCO+PAN" alt="Banco Pan" />
+        <C.Logo src="https://via.placeholder.com/150x50?text=BANCO+PAN" alt="Banco Pan"/>
 
         <C.DivLine>
           <LineGradiente
@@ -23,18 +22,22 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
             backgroudColor="#00000024"
           />
         </C.DivLine>
+        <Espaco height="10px"></Espaco>
 
         <TextLine fontWeight="400"
           fontSize="20px"
           margin="0px"
         >Empréstimo Pessoal</TextLine>
+        <Espaco height="10px"></Espaco>
 
         <TextLine fontWeight="700" fontSize="27px" 
         color="#373737" margin="0px">
           Valor R$ {valorEmprestimo.toFixed(2)}
         </TextLine>
 
-        <Installments>{parcelas}x de R$ {valorParcela.toFixed(2)}</Installments>
+        <TextLine fontWeight="400" fontSize="18px">
+          {parcelas}x de R$ {valorParcela.toFixed(2)}
+        </TextLine>
 
         <LineGradiente
             width="180px"
@@ -50,7 +53,7 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
           {`CET de ${cet}%`}
         </LineGradiente>
 
-
+        <Espaco height="10px"></Espaco>
 
         <ButtonAll 
           fontFamily="Nunito, sans-serif"
@@ -65,7 +68,7 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
           Solicitar
         </ButtonAll>
 
-        <Espaco height="20px"></Espaco>
+        <Espaco height="15px"></Espaco>
 
         <ButtonAll 
           fontFamily="Nunito, sans-serif"
@@ -85,26 +88,6 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
     );
 };
      
-
-const Logo = styled.img`
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-`;
-
-const Installments = styled.p`
-  font-size: 18px;
-  margin: 10px 0;
-`;
-
-const Cet = styled.div`
-  background-color: #e0f7e0;
-  color: #3c763d;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 4px;
-`;
-
 
 
 export default FormCredito;
