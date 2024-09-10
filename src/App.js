@@ -1,11 +1,14 @@
+import { BrowserRouter as Router } from 'react-router-dom';
+import Home from './Pages/Home/home';
 
 import './App.css';
-import Credito from './Pages/Credito/Credito';
 
 function App() {
   return (
-      <Credito></Credito>
-  );
+    <Router>
+      <Home />
+    </Router>
+  )
 }
 
 export default App;
