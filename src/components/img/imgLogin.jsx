@@ -1,10 +1,12 @@
+import image from './image.png';
 import * as C from './styled';
-import image from './image.png'
 
-function ImgLogin(){
+function ImgLogin({Invert}){
     return(
         <C.DivImgLogin>
-            <C.ImgPrincipal src={image}
+            <C.ImgPrincipal 
+            Invert={Invert}
+            src={image}
             alt="Mascote CredFacil"/>
         </C.DivImgLogin>
     )

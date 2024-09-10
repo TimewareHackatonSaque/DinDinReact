@@ -1,4 +1,5 @@
 import './App.css';
+<<<<<<< HEAD
 import Cadastro from './Pages/Cadastro/Cadastro';
 import Home from './Pages/Home/home';
 import Login from './Pages/login/login';
@@ -9,6 +10,13 @@ function App() {
     <Router>
       <Home></Home>
     </Router>
+=======
+import Credito from './Pages/Credito/Credito';
+
+function App() {
+  return (
+      <Credito></Credito>
+>>>>>>> 4c4852a1ee6e6fec04525a86eb371a37c9cbeb82
   );
 }
 
