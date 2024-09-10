@@ -1,13 +1,15 @@
 import * as C from './styled';
 
-function ImgLogin({Invert, image, width}){
+function ImgLogin({Invert, image, width, height, maxWidth}){
     return(
         <C.DivImgLogin>
             <C.ImgPrincipal 
             Invert={Invert}
             src={image}
             width={width}
-            alt="Mascote CredFacil"/>
+            height={height}
+            maxWidth={maxWidth}
+            />
         </C.DivImgLogin>
     )
 }

@@ -23,10 +23,12 @@ export const Divisor = styled.hr`
 
     border: 2px solid ; 
    background: linear-gradient(to right, blue, hotpink);
-
-
-
-
-
 `
+
+export const DivLine = styled.div`
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  width: 100%; /* Ocupa toda a largura disponível */
+`
+
 

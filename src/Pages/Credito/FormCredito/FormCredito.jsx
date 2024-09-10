@@ -1,11 +1,12 @@
 import ButtonAll from '../../../components/button/buttonAll';
+import ImgLogin from '../../../components/img/imgLogin';
 import LineGradiente from '../../../components/line/line';
 import Espaco from '../../../components/space/space';
 import TextLine from '../../../components/textLine/textLine';
 import * as C from './styled';
 
 
-function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
+function FormCredito({valorEmprestimo, parcelas, valorParcela, cet, image}) {
 
     const solicitarEmprestimo = () => {
         alert(`Solicitando empréstimo de R$ ${valorEmprestimo}`);
@@ -13,8 +14,7 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
 
     return (
       <C.Container>
-        <C.Logo src="https://via.placeholder.com/150x50?text=BANCO+PAN" alt="Banco Pan"/>
-
+        <ImgLogin image={image} maxWidth="90px" height="auto"></ImgLogin>
         <C.DivLine>
           <LineGradiente
             width="290px"
@@ -50,7 +50,11 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
             borderImgSlice="1"
             borderImgSource="linear-gradient(90deg, #048F44 0%, #F6811D 100%)"
         >
-          {`CET de ${cet}%`}
+          {
+            <TextLine fontWeight="700" fontSize="12.5px" margin="5px">
+              CET de ${cet}%
+            </TextLine>
+          }
         </LineGradiente>
 
         <Espaco height="10px"></Espaco>
@@ -83,7 +87,7 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet}) {
         >
           Ver detalhes
         </ButtonAll>
-        
+        <Espaco height="15px"></Espaco>
       </C.Container>
     );
 };
