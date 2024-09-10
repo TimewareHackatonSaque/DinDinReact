@@ -51,8 +51,6 @@ function Credito() {
                 cet={3.5} 
                 image={imagen1}
             />
-
-
         </>
     )
 }

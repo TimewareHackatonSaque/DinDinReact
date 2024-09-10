@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './Pages/Home/home';
-import Simulador from './Pages/SimularEmprestimo/Simulador';
+import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
 import Footer from './components/footer/footer';
-import Credito from './Pages/Credito/Credito';  // Importando a página Crédito
-import Login from './Pages/login/login';  // Importando a página Login
-import Cadastro from './Pages/Cadastro/Cadastro';  // Importando a página Cadastro
+import Cadastro from './Pages/Cadastro/Cadastro'; // Importando a página Cadastro
+import Credito from './Pages/Credito/Credito'; // Importando a página Crédito
+import Home from './Pages/Home/home';
+import Login from './Pages/login/login'; // Importando a página Login
+import Simulador from './Pages/SimularEmprestimo/Simulador';
 
 function App() {
   return (
