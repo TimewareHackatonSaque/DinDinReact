@@ -1,9 +1,9 @@
 import React from 'react';
-import { AiOutlineHome } from 'react-icons/ai';  // Ícone Home
-import { CiSearch } from 'react-icons/ci';  // Ícone de lupa
-import { BiUserCircle } from 'react-icons/bi';  // Ícone Perfil
-import { FooterContainer, BottomNav, NavLinkStyled, SearchWrapper, SearchLabelWrapper } from './styled';
+import { AiOutlineHome } from 'react-icons/ai'; // Ícone Home
+import { BiUserCircle } from 'react-icons/bi'; // Ícone Perfil
+import { CiSearch } from 'react-icons/ci'; // Ícone de lupa
 import TextLine from '../textLine/textLine';
+import { BottomNav, FooterContainer, NavLinkStyled, SearchLabelWrapper, SearchWrapper } from './styled';
 
 const Footer = () => {
   return (

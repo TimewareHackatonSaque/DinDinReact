@@ -37,7 +37,6 @@ export const ButtonAll = styled.button`
   &.detalhes {
     &:hover {
       background-color: #ff8c00;
-      color: white;
     }
   }
 `
