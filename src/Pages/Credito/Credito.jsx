@@ -5,12 +5,15 @@ import imagen1 from '../../imagens/pan.png';
 import imagen2 from '../../imagens/santander.png';
 import FormCredito from "./FormCredito/FormCredito";
 import * as C from './styled';
+import { Link } from 'react-router-dom';
 
 function Credito() {
     return(
         <>
-            <IconLeft  margin="29px 0px 0px 32px" fontSize="24px" height="24px"></IconLeft>
-
+            
+            <Link to="/simulador">
+                <IconLeft  margin="29px 0px 0px 32px" fontSize="24px" height="24px"></IconLeft>
+            </Link>
             <C.TituloCredito>Opções <br/> disponíveis (3)</C.TituloCredito>
 
             <Espaco height="30px"/>

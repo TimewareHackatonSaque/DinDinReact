@@ -4,6 +4,7 @@ import ButtonAll from '../../../components/button/buttonAll';
 import Espaco from '../../../components/space/space';
 import TextLine from '../../../components/textLine/textLine';
 import * as C from './styled';
+import { Link } from 'react-router-dom';
 
 function FormSimular(){
   const [selectedIndex, setSelectedIndex] = useState('');
@@ -97,6 +98,7 @@ function FormSimular(){
       </C.DivOpcoes>
 
         <Espaco height="10px"/>
+        <Link to="/credito">
       <ButtonAll 
         backgroundColor="#048F44" 
         fontFamily="Nunito, sans-serif" 
@@ -105,6 +107,7 @@ function FormSimular(){
       >
         Consultar ofertas
       </ButtonAll>
+    </Link>
     </C.FormBody>
     
   )

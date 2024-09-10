@@ -2,6 +2,7 @@ import ButtonAll from '../../../components/button/buttonAll';
 import Espaco from '../../../components/space/space';
 import InputBox from '../../../components/TextBox/TextBox';
 import * as C from './styled';
+import { Link } from 'react-router-dom';
 
 function FormCad(){
   return(
@@ -42,8 +43,9 @@ function FormCad(){
 
       <Espaco height="15px" />
 
-      <ButtonAll backgroundColor="#048F44">Próximo</ButtonAll>
-
+      <Link to="/home">
+        <ButtonAll backgroundColor="#048F44">Próximo</ButtonAll>
+      </Link>
     </C.FormCad>
   )
 }

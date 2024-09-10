@@ -2,6 +2,7 @@ import IconLeft from '../../components/IconLeft/left';
 import LineGradiente from '../../components/line/line';
 import Espaco from '../../components/space/space';
 import FormSimular from './FormSimular/formSimular';
+import { Link } from 'react-router-dom';
 import * as C from './styled';
 
 function SimularEmp(){
@@ -9,7 +10,9 @@ function SimularEmp(){
     <div>
 
       <div>
-        <IconLeft margin="29px 0px 0px 32px" fontSize="24px" height="24px"></IconLeft>
+      <Link to="/">  {/* Este link irá redirecionar para a home */}
+      <IconLeft margin="29px 0px 0px 32px" fontSize="24px" height="24px" />
+    </Link>
         
         <Espaco height="20px"></Espaco>
 
