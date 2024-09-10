@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import IconLeft from "../../components/IconLeft/left";
 import LineGradiente from "../../components/line/line";
 import Espaco from "../../components/space/space";
+import TextLine from "../../components/textLine/textLine";
 import imagen1 from '../../imagens/pan.png';
 import imagen2 from '../../imagens/santander.png';
 import FormCredito from "./FormCredito/FormCredito";
 import * as C from './styled';
-import { Link } from 'react-router-dom';
 
 function Credito() {
     return(
@@ -14,7 +15,14 @@ function Credito() {
             <Link to="/simulador">
                 <IconLeft  margin="29px 0px 0px 32px" fontSize="24px" height="24px"></IconLeft>
             </Link>
-            <C.TituloCredito>Opções <br/> disponíveis (3)</C.TituloCredito>
+            <TextLine
+                fontWeight="600"
+                fontSize="33px"
+                color="#373737"
+                margin="0px 0px 0px 50px"
+            >
+                Opções <br/> disponíveis (3)
+            </TextLine>
 
             <Espaco height="30px"/>
 

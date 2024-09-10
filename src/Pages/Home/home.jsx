@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';  // Importando o Header
-import TextLine from '../../components/textLine/textLine';
-import Tile from '../../components/tile/tile';
-import { IoWalletOutline, IoHeadsetOutline, IoFolderOpenOutline, IoEyeOutline } from "react-icons/io5";
 import { BsFiles } from "react-icons/bs";
 import { CiMoneyCheck1 } from "react-icons/ci";
+import { IoEyeOutline, IoFolderOpenOutline, IoHeadsetOutline, IoWalletOutline } from "react-icons/io5";
+import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header'; // Importando o Header
+import TextLine from '../../components/textLine/textLine';
+import Tile from '../../components/tile/tile';
 
-import * as S from './styled';  // Estilo para o layout
+import * as S from './styled'; // Estilo para o layout
 
 const Home = () => {
   const [showAlert, setShowAlert] = useState(true);  // Controla a exibição do alerta
+  
 
   return (
     <div>
@@ -43,7 +44,7 @@ const Home = () => {
 
         {/* Grid com os Tiles */}
         <S.TileGrid>
-          <Tile icon={<BsFiles />} text="Simular Empréstimo" />
+          <Tile redirect="/simulador" icon={<BsFiles />} text="Simular Empréstimo" />
           <Tile icon={<IoFolderOpenOutline />} text="Histórico de Cotações" />
           <Tile icon={<IoEyeOutline />} text="Meus Empréstimos" />
           <Tile icon={<IoWalletOutline />} text="Minha Carteira" />

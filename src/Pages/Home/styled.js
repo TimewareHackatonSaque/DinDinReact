@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const MainContent = styled.main`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 10px;
   margin-top: 0px;  /* Espaçamento abaixo do Header */
   margin-bottom: 80px;  /* Espaçamento acima do Footer */
@@ -15,7 +14,7 @@ export const MainContent = styled.main`
 // Estilo para o texto "Acesse rapidamente", centralizando-o
 export const CenteredText = styled.div`
   display: flex;
-  margin: 10px 0;  /* Espaçamento entre o texto e os Tiles */
+  margin: 0px 0;  /* Espaçamento entre o texto e os Tiles */
   width: 100%;  /* Garante que o texto ocupe toda a largura */
 `;
 
