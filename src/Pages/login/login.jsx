@@ -1,5 +1,6 @@
 import ImgLogin from '../../components/img/imgLogin';
 import Espaco from '../../components/space/space';
+import imagem from '../../imagens/image.png';
 import FormLogin from './formLogin/formLogin';
 import * as C from './styled';
 
@@ -7,7 +8,7 @@ function Login(){
     return (
         <C.DivLogin>
             <Espaco height="46px" />
-            <ImgLogin></ImgLogin>
+            <ImgLogin image={imagem}></ImgLogin>
 
             <Espaco height="54px" />
             <C.TituloLogin>Bem vindo</C.TituloLogin>
