@@ -15,21 +15,23 @@ const Footer = () => {
           <TextLine fontFamily="Poppins, sans-serif" fontSize="10px" color="#FFFFFF" fontWeight="400">Home</TextLine>
         </NavLinkStyled>
 
-        {/* Contêiner da lupa com a label abaixo */}
-        <SearchLabelWrapper>
-          <SearchWrapper>
-            <CiSearch size={30} color="white" />
-          </SearchWrapper>
-          <TextLine 
-            fontFamily="Poppins, sans-serif" 
-            fontSize="10px" 
-            color="#FFFFFF" 
-            fontWeight="400" 
-            marginTop="10px"  /* Adicione o marginTop aqui para ajustar o espaçamento */
-          >
-            Simular Empréstimo
-          </TextLine>
-        </SearchLabelWrapper>
+        {/* Contêiner da lupa com a label abaixo (Simular Empréstimo) */}
+        <NavLinkStyled to="/simulador">
+          <SearchLabelWrapper>
+            <SearchWrapper>
+              <CiSearch size={30} color="white" />
+            </SearchWrapper>
+            <TextLine 
+              fontFamily="Poppins, sans-serif" 
+              fontSize="10px" 
+              color="#FFFFFF" 
+              fontWeight="400" 
+              marginTop="10px"
+            >
+              Simular Empréstimo
+            </TextLine>
+          </SearchLabelWrapper>
+        </NavLinkStyled>
 
         {/* Ícone Perfil */}
         <NavLinkStyled to="/perfil">

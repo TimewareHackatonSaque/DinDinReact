@@ -3,13 +3,14 @@ import styled from 'styled-components';
 // Estilo do container do Header
 export const Header = styled.header`
   background-color: #048f44;
-  width: calc(100% - 72px);
+  width: 100%;  /* Agora preenche 100% da largura da tela */
   display: flex;
   flex-direction: column;
-  row-gap: 18px;
+  row-gap: 10px;  /* Ajuste o espaço entre os elementos */
   justify-content: space-between;
-  padding: 24px 36px 24px 36px;
+  padding: 12px 24px;  /* Reduzindo o padding para diminuir a altura */
   align-items: center;
+  box-sizing: border-box;  /* Garante que o padding seja incluído na largura */
 `;
 
 export const Row = styled.div`
@@ -26,9 +27,9 @@ export const BtnRight = styled.div`
   background-color: #ffffff33;
   border-radius: 8px;
   position: relative;
-  width: 54px;
-  height: 42px;
-  padding: 0 12px;
+  width: 50px;  /* Ajuste o tamanho para reduzir a altura */
+  height: 36px;  /* Diminuir a altura */
+  padding: 0 8px;  /* Diminuir o padding lateral */
 `;
 
 export const IconWrapper = styled.div`
@@ -37,9 +38,9 @@ export const IconWrapper = styled.div`
   justify-content: center;
   background-color: #006b31;
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  margin-right: 16px;
+  width: 36px;  /* Diminuir o tamanho do ícone */
+  height: 36px;  /* Diminuir o tamanho do ícone */
+  margin-right: 12px;
   position: absolute;
   left: -12px;
   z-index: 100;
@@ -52,13 +53,13 @@ export const IconWrapper = styled.div`
 export const SaldoValue = styled.p`
   color: #fff;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 31.2px;
+  font-size: 22px;  /* Diminuir o tamanho da fonte */
+  line-height: 28px;  /* Ajuste o espaçamento entre linhas */
 
   span {
     font-weight: 400;
-    font-size: 16px;
-    line-height: 19.2px;
+    font-size: 14px;  /* Diminuir o tamanho do texto */
+    line-height: 18px;
   }
 `;
 

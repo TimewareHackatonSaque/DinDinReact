@@ -6,7 +6,7 @@ import TextLine from '../textLine/textLine';
 
 const Header = () => {
   const [showSaldo, setShowSaldo] = useState(false);
-  const [saldo, setSaldo] = useState(1204.35);  // Mantém o mock do saldo
+  const [saldo] = useState(1204.35);  // Mantém o mock do saldo
 
   return (
     <C.Header>
