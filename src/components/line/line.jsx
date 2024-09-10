@@ -1,6 +1,6 @@
 import * as C from './styled';
 
-function LineGradiente({ width, height, border, backgroudColor, margin}){
+function LineGradiente({borderImgSource, borderImgSlice, padding, radius, children, width, height, border, backgroudColor, margin}){
   return (
     <div>
       <C.GradientLine
@@ -9,7 +9,13 @@ function LineGradiente({ width, height, border, backgroudColor, margin}){
         border={border}
         backgroudColor={backgroudColor}
         margin={margin}
-      />
+        radius={radius}
+        padding={padding}
+        borderImgSlice={borderImgSlice}
+        borderImgSource={borderImgSource}
+      >
+      {children}
+      </C.GradientLine>
     </div>
   );
 };

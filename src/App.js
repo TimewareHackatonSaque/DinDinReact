@@ -1,10 +1,10 @@
 
 import './App.css';
-import SimularEmp from './Pages/SimularEmprestimo/Simulador';
+import Credito from './Pages/Credito/Credito';
 
 function App() {
   return (
-      <SimularEmp></SimularEmp>
+      <Credito></Credito>
   );
 }
 
