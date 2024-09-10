@@ -1,6 +1,6 @@
 import ImgLogin from '../../components/img/imgLogin';
 import Espaco from '../../components/space/space';
-import imagem from '../../imagens/image.png';
+import imagem from '../../imagens/logo.png';
 import FormLogin from './formLogin/formLogin';
 import * as C from './styled';
 

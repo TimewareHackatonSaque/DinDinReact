@@ -1,10 +1,10 @@
 
 import './App.css';
-import Login from './Pages/login/login';
+import Credito from './Pages/Credito/Credito';
 
 function App() {
   return (
-      <Login/>
+      <Credito></Credito>
   );
 }
 

@@ -9,8 +9,8 @@ export const Container = styled.div`
   max-width: 350px;
   margin: auto;
   background: white;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 10px;
   text-align: center;
   box-shadow: 0px 5.03px 25.16px 0px #0000000A;
 

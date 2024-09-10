@@ -10,5 +10,7 @@ export const ImgPrincipal = styled.img`
     width: 111px;
     height: 116px;
     filter: ${({ Invert }) => Invert};
-    width:${({ width }) => width}
+    width:${({ width }) => width};
+    height:${({ height }) => height};
+    max-width:${({ maxWidth }) => maxWidth}
 `;
