@@ -20,6 +20,12 @@ export const TileContainer = styled.div`
   &:hover {
     transform: scale(1.05);
   }
+
+    @media (min-width: 1000px) {
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 `;
 
 // Estilo para o ícone

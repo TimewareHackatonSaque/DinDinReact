@@ -7,7 +7,7 @@ export const DivLine = styled.div`
 `
 export const Container = styled.div`
   max-width: 350px;
-  margin: auto;
+  margin: 10px;
   background: white;
   padding: 10px;
   border-radius: 10px;

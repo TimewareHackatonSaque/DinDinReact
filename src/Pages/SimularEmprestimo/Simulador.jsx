@@ -12,7 +12,7 @@ function SimularEmp(){
       <div>
       <Link to="/home">  {/* Este link irá redirecionar para a home */}
       <IconLeft margin="29px 0px 0px 32px" fontSize="24px" height="24px" />
-    </Link>
+      </Link>
         
         <Espaco height="20px"></Espaco>
 
@@ -31,7 +31,7 @@ function SimularEmp(){
         />
       </C.DivLine>
 
-      <Espaco height="40px"></Espaco>
+      <Espaco height="20px"></Espaco>
 
       <FormSimular></FormSimular>
 

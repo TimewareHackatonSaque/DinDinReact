@@ -1,6 +1,6 @@
 import * as C from './styled';
 
-function ButtonAll({ type, colorSelect, margin, color,border, height, width, onClick, backgroundColor, children, fontFamily, fontWeight, fontSize}) {
+function ButtonAll({ isSelected, type, colorSelect, margin, color,border, height, width, onClick, backgroundColor, children, fontFamily, fontWeight, fontSize}) {
   return (
     <div>
       <C.ButtonAll
@@ -17,6 +17,7 @@ function ButtonAll({ type, colorSelect, margin, color,border, height, width, onC
         margin={margin}
         colorSelect={colorSelect}
         type={type}
+        isSelected={isSelected}
         >
           {children}
       </C.ButtonAll>

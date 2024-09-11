@@ -87,7 +87,7 @@ function FormCredito({valorEmprestimo, parcelas, valorParcela, cet, image}) {
         >
           Ver detalhes
         </ButtonAll>
-        <Espaco height="15px"></Espaco>
+        <Espaco height="10px"></Espaco>
       </C.Container>
     );
 };

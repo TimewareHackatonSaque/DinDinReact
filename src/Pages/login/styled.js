@@ -1,10 +1,20 @@
 import styled from 'styled-components';
 
 export const DivLogin = styled.div`
-    @media (max-width: 414x){
+    @media (max-width: 414px){
     display column;
     background-color: #FFFFFF;
     }
+    @media (min-width: 415px){
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Corrigido para flex-direction */
+    background-color: #FFFFFF;
+    }
+    
 `;
 
 export const TituloLogin = styled.h1`

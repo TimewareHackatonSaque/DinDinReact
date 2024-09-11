@@ -21,6 +21,13 @@ export const ButtonAll = styled.button`
     color: ${({ isSelected }) => (isSelected ? 'white' : 'white')}; /* Ajusta cor do texto */
   };
 
+  ${({ isSelected, colorSelect }) =>
+    isSelected &&
+    `
+    background-color: ${colorSelect};
+    color: white; /* Altere conforme a necessidade */
+  `}
+  
   &:active {
     transform: scale(0.98);
   };

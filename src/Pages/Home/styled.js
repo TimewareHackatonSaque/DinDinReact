@@ -8,7 +8,6 @@ export const MainContent = styled.main`
   margin-top: 0px;  /* Espaçamento abaixo do Header */
   margin-bottom: 80px;  /* Espaçamento acima do Footer */
   min-height: calc(100vh - 160px);  /* Calcula a altura da tela menos o espaço do Header e Footer */
-  width: 75%;  /* Largura do conteúdo principal */
 `;
 
 // Estilo para o texto "Acesse rapidamente", centralizando-o
@@ -23,7 +22,6 @@ export const TileGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);  /* Duas colunas */
   grid-gap: 32px;  /* Espaçamento entre os Tiles */
-  padding: 48px;  /* Espaçamento interno do grid */
   justify-content: center;  /* Centraliza o grid */
   width: 100%;  /* Garante que o grid ocupe toda a largura */
   max-width: 100%;  /* Ajusta a largura máxima para não limitar o grid */

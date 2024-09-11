@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom'; // Importando o Link correto
 import IconLeft from '../../components/IconLeft/left';
-import { Link } from 'react-router-dom';  // Importando o Link correto
 import Espaco from "../../components/space/space";
 import TextLine from "../../components/textLine/textLine";
 import FormCad from "./formCadastro/formCad";

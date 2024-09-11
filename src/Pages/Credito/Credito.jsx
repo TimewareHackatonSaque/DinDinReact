@@ -11,19 +11,20 @@ function Credito() {
     const {ofertas} = location.state || {ofertas: []};
 
     return(
-        <>   
-            <Link to="/simulador">
-                <IconLeft  margin="29px 0px 0px 32px" fontSize="24px" height="24px"></IconLeft>
-            </Link>
+        <C.DivBody>  
+
             
-            <TextLine
-                fontWeight="600"
-                fontSize="33px"
-                color="#373737"
-                margin="0px 0px 0px 50px"
-            >
-                Opções <br/> disponíveis ({ofertas.length})
-            </TextLine>
+            <div>
+                <Link to="/home">  {/* Este link irá redirecionar para a home */}
+                <IconLeft margin="29px 0px 0px 32px" fontSize="24px" height="24px" />
+                </Link>
+                    
+                    <Espaco height="20px"></Espaco>
+
+                    <C.TituloLogin>
+                        Opções <br/> disponíveis ({ofertas.length})
+                    </C.TituloLogin>
+            </div>
 
             <Espaco height="30px"/>
 
@@ -36,6 +37,16 @@ function Credito() {
             </C.DivLine>
             
             <Espaco height="30px"/>
+
+            <C.DivOpcoes>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
+            </C.DivOpcoes>
+
+            
 
             {ofertas.length > 0 ?(
                 ofertas.map((oferta, index) =>(
@@ -58,7 +69,7 @@ function Credito() {
                     Nenhuma oferta disponível
                 </TextLine>
             )}
-        </>
+        </C.DivBody>
     );
 }
 
