@@ -23,16 +23,17 @@ function FormSimular(){
 
   const consultarOfertas = async () => {
     try{
-      const response = await fetch('url',
+      const response = await fetch('https://apiv2-dev.jurosbaixos.com.br /emprestimos/sem-garantia/simulacao/ultimas',
       {
-        method: 'POST',
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
+          'Bearer': '',
         },
-        body: JSON.stringify({
+        /*body: JSON.stringify({
           valorEmprestimo: valorEmprestimo,
           parcelas: buttonLabels[selectedIndex],
-        }),
+        }),*/
       });
       if(!response.ok){
         throw new Error('Erro na requisição');
