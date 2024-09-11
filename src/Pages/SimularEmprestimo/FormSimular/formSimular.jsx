@@ -7,6 +7,7 @@ import TextLine from '../../../components/textLine/textLine';
 import * as C from './styled';
 
 function FormSimular(){
+  const [error, setError] = useState('');
   const [valorEmprestimo, setValorEmprestimo] = useState('');
   const [ofertas, setOfertas] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState('');
@@ -17,11 +18,21 @@ function FormSimular(){
     setSelectedIndex(index);
   };
 
-  const handleInputChange = (e) =>{
-    setValorEmprestimo(e.target.value);
+  console.log(valorEmprestimo)
+
+  const handleInputChange = (e) => {
+    const numericValue = e.target.value.replace(/\D/g, '');
+    
+    setValorEmprestimo(numericValue);
   };
 
-  const consultarOfertas = async () => {
+  const consultarOfertas = async (e) => {
+    e.preventDefault()
+    if(valorEmprestimo <= 15000 || valorEmprestimo >= 10000000){
+      setError("O valor deve ser entre 150,00 e 100.000,00")
+      return;
+    }
+    
     try{
       const response = await fetch('https://apiv2-dev.jurosbaixos.com.br /emprestimos/sem-garantia/simulacao/ultimas',
       {
@@ -73,12 +84,18 @@ function FormSimular(){
             fontFamily="Nunito, sans-serif"
             fontSize="18px"
             padding="13px 10px 13px 10px"
-            type="string"
-            value={valorEmprestimo}
-            onChange={handleInputChange}
+            type="text"
+            value={new Intl.NumberFormat('pt-BR', {
+              style: 'currency',
+              currency: 'BRL'
+              }).format(valorEmprestimo / 100)}
+            onChange={(e) => handleInputChange(e)}
           >
             R$
           </InputBox>
+
+          
+          
         </C.DivInput>
 
         <TextLine
@@ -111,6 +128,7 @@ function FormSimular(){
           {buttonLabels.map((label, index) => (
             <ButtonAll
               key={index}
+              className={"parcelas"}
               backgroundColor="white"
               color="#F6811D"
               width="70px"
@@ -122,6 +140,7 @@ function FormSimular(){
               fontSize="16px"
               fontWeight="700"
               type="button"
+              cursor="pointer"
               isSelected={selectedIndex === index}
               onClick={() => handleClick(index)}
             >
@@ -144,6 +163,8 @@ function FormSimular(){
       >
         Consultar ofertas
       </ButtonAll>
+
+      <TextLine>{error}</TextLine>
     </C.FormBody>
     
   )

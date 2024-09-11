@@ -2,9 +2,9 @@ import { useState } from 'react';
 import ButtonAll from '../../../components/button/buttonAll';
 import ImgLogin from '../../../components/img/imgLogin';
 import LineGradiente from '../../../components/line/line';
+import ModalBottomSheet from '../../../components/ModalBottomSheet/ModalBottomSheet';
 import Espaco from '../../../components/space/space';
 import TextLine from '../../../components/textLine/textLine';
-import ModalBottomSheet from '../../../components/ModalBottomSheet/ModalBottomSheet';
 import * as C from './styled';
 
 

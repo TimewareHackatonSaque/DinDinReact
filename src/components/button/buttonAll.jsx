@@ -1,10 +1,10 @@
 import * as C from './styled';
 
-function ButtonAll({ isSelected, type, colorSelect, margin, color,border, height, width, onClick, backgroundColor, children, fontFamily, fontWeight, fontSize}) {
+function ButtonAll({ cursor, isSelected, type, colorSelect, margin, color,border, height, width, onClick, backgroundColor, children, fontFamily, fontWeight, fontSize}) {
   return (
     <div>
-      <C.ButtonAll
-        className='montserrat-regular' 
+      <C.ButtonAll 
+        cursor={cursor}
         onClick={onClick} 
         backgroundColor={backgroundColor}
         fontFamily={fontFamily}

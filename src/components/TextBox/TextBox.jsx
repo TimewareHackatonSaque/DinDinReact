@@ -1,6 +1,6 @@
 import * as C from './styled';
 
-function InputBox({justFy, display, padding, fontSize,fontFamily, width, border, children, onChange, type }) {
+function InputBox({value, justFy, display, padding, fontSize,fontFamily, width, border, children, onChange, type }) {
   return (
     <div>
       <C.InputText
@@ -15,6 +15,7 @@ function InputBox({justFy, display, padding, fontSize,fontFamily, width, border,
         padding={padding}
         display={display}
         justFy={justFy}
+        value={value}
       />
     </div>
   );

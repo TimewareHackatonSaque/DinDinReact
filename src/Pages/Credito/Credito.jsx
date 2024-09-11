@@ -2,7 +2,8 @@ import { Link, useLocation } from 'react-router-dom';
 import IconLeft from "../../components/IconLeft/left";
 import LineGradiente from "../../components/line/line";
 import Espaco from "../../components/space/space";
-import TextLine from "../../components/textLine/textLine";
+import TextLine from '../../components/textLine/textLine';
+import pan from '../../imagens/pan.png';
 import FormCredito from "./FormCredito/FormCredito";
 import * as C from './styled';
 
@@ -39,11 +40,11 @@ function Credito() {
             <Espaco height="30px"/>
 
             <C.DivOpcoes>
-                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
-                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
-                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
-                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
-                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} ></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} image={pan}></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} image={pan}></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} image={pan}></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} image={pan}></FormCredito>
+                <FormCredito valorEmprestimo={10} parcelas={10} valorParcela={10} cet={10} image={pan}></FormCredito>
             </C.DivOpcoes>
 
             
@@ -59,15 +60,15 @@ function Credito() {
                         image={oferta.image}
                     />
                 ))
-            ) : (
-                <TextLine
+            ) : ( <TextLine></TextLine>
+                /*<TextLine
                     fontWeight="600"
                     fontSize="33px"
                     color="#373737"
                     margin="0px 0px 0px 50px"
                 >
                     Nenhuma oferta disponível
-                </TextLine>
+                </TextLine>*/
             )}
         </C.DivBody>
     );
