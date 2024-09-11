@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import ButtonAll from '../../../components/button/buttonAll';
 import Espaco from '../../../components/space/space';
 import InputBox from '../../../components/TextBox/TextBox';
 import * as C from './styled';
-import { Link } from 'react-router-dom';
 
 function FormCad(){
   return(
     <C.FormCad>
+      
       <InputBox>
         Nome Completo
       </InputBox>

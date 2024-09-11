@@ -1,20 +1,21 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import IconLeft from "../../components/IconLeft/left";
 import LineGradiente from "../../components/line/line";
 import Espaco from "../../components/space/space";
 import TextLine from "../../components/textLine/textLine";
-import imagen1 from '../../imagens/pan.png';
-import imagen2 from '../../imagens/santander.png';
 import FormCredito from "./FormCredito/FormCredito";
 import * as C from './styled';
 
 function Credito() {
+    const location = useLocation();
+    const {ofertas} = location.state || {ofertas: []};
+
     return(
-        <>
-            
+        <>   
             <Link to="/simulador">
                 <IconLeft  margin="29px 0px 0px 32px" fontSize="24px" height="24px"></IconLeft>
             </Link>
+            
             <TextLine
                 fontWeight="600"
                 fontSize="33px"
@@ -36,31 +37,24 @@ function Credito() {
             
             <Espaco height="30px"/>
 
-            <FormCredito 
-                valorEmprestimo={5000} 
-                parcelas={12} 
-                valorParcela={450} 
-                cet={3.5} 
-                image={imagen1}
-            />
-
-            <FormCredito 
-                valorEmprestimo={5000} 
-                parcelas={12} 
-                valorParcela={450} 
-                cet={3.5} 
-                image={imagen2}
-            />
-
-            <FormCredito 
-                valorEmprestimo={5000} 
-                parcelas={12} 
-                valorParcela={450} 
-                cet={3.5} 
-                image={imagen1}
-            />
+            {ofertas.length > 0 ?(
+                ofertas.map((oferta, index) =>(
+                    <FormCredito
+                        key={index}
+                        valorEmprestimo={oferta.valorEmprestimo}
+                        parcelas={oferta.parcelas}
+                        valorParcela={oferta.valorParcela}
+                        cet={oferta.cet}
+                        image={oferta.image}
+                    />
+                ))
+            ) : (
+                <TextLine>
+                    Nenhuma oferta disponível
+                </TextLine>
+            )}
         </>
-    )
+    );
 }
 
 export default Credito;

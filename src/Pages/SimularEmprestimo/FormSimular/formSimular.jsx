@@ -1,19 +1,52 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import InputBox from '../../../components/TextBox/TextBox';
 import ButtonAll from '../../../components/button/buttonAll';
 import Espaco from '../../../components/space/space';
 import TextLine from '../../../components/textLine/textLine';
 import * as C from './styled';
-import { Link } from 'react-router-dom';
 
 function FormSimular(){
+  const [valorEmprestimo, setValorEmprestimo] = useState('');
+  const [ofertas, setOfertas] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState('');
+  const buttonLabels = ['6x', '12x', '18x', '24x', '30x', '36x', '60x', '84x'];
+  const navigate = useNavigate();
 
   const handleClick = (index) => {
     setSelectedIndex(index);
   };
 
-  const buttonLabels = ['6x', '12x', '18x', '24x', '30x', '36x', '60x', '84x'];
+  const handleInputChange = (e) =>{
+    setValorEmprestimo(e.target.value);
+  };
+
+  const consultarOfertas = async () => {
+    try{
+      const response = await fetch('url',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          valorEmprestimo: valorEmprestimo,
+          parcelas: buttonLabels[selectedIndex],
+        }),
+      });
+      if(!response.ok){
+        throw new Error('Erro na requisição');
+      }
+
+      const data = await response.json();
+      setOfertas(data.ofertas);
+
+      navigate('/credito', {state: {ofertas: data.ofertas}})
+    }
+    catch (err){
+      console.error('Erro ao consultar ofertas:', err);
+    }
+  };
 
   return(
     <C.FormBody>
@@ -39,6 +72,9 @@ function FormSimular(){
             fontFamily="Nunito, sans-serif"
             fontSize="18px"
             padding="13px 10px 13px 10px"
+            type="string"
+            value={valorEmprestimo}
+            onChange={handleInputChange}
           >
             R$
           </InputBox>
@@ -98,16 +134,15 @@ function FormSimular(){
       </C.DivOpcoes>
 
         <Espaco height="10px"/>
-        <Link to="/credito">
       <ButtonAll 
         backgroundColor="#048F44" 
         fontFamily="Nunito, sans-serif" 
         fontSize="17px" 
         fontWeight="900"
+        onClick={consultarOfertas}
       >
         Consultar ofertas
       </ButtonAll>
-    </Link>
     </C.FormBody>
     
   )
