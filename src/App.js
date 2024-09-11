@@ -23,12 +23,13 @@ function Layout() {
   return (
     <div>
       <Routes>
+        
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/perfil" element={<Perfil/>} />
         <Route path="/simulador" element={<Simulador />} />
-        <Route path="/credito" element={<Credito />} />  {/* Definindo a rota para a página Crédito */}  
+        <Route path="/credito" element={<Credito />} />  
         <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
 
