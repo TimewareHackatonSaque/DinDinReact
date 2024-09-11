@@ -22,7 +22,7 @@ function Credito() {
                 color="#373737"
                 margin="0px 0px 0px 50px"
             >
-                Opções <br/> disponíveis (3)
+                Opções <br/> disponíveis ({ofertas.length})
             </TextLine>
 
             <Espaco height="30px"/>
@@ -49,7 +49,12 @@ function Credito() {
                     />
                 ))
             ) : (
-                <TextLine>
+                <TextLine
+                    fontWeight="600"
+                    fontSize="33px"
+                    color="#373737"
+                    margin="0px 0px 0px 50px"
+                >
                     Nenhuma oferta disponível
                 </TextLine>
             )}

@@ -5,6 +5,7 @@ import Cadastro from './Pages/Cadastro/Cadastro'; // Importando a página Cadast
 import Credito from './Pages/Credito/Credito'; // Importando a página Crédito
 import Home from './Pages/Home/home';
 import Login from './Pages/login/login'; // Importando a página Login
+import Perfil from './Pages/Perfil/perfil';
 import Simulador from './Pages/SimularEmprestimo/Simulador';
 
 function App() {
@@ -25,6 +26,7 @@ function Layout() {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/perfil" element={<Perfil/>} />
         <Route path="/simulador" element={<Simulador />} />
         <Route path="/credito" element={<Credito />} />  {/* Definindo a rota para a página Crédito */}  
         <Route path="/cadastro" element={<Cadastro />} />

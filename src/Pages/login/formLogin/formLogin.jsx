@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link, useNavigate } from 'react-router-dom'; // Importando o Link correto
 import InputBox from '../../../components/TextBox/TextBox';
 import ButtonAll from '../../../components/button/buttonAll';
@@ -10,6 +11,13 @@ function FormLogin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    const [senhaVisivel, setSenhaVisivel] = useState(false);
+
+    const toogleSenhaVisivel = () => {
+        setSenhaVisivel(!senhaVisivel);
+    };
+
 
     const navigate = useNavigate();
 
@@ -30,11 +38,28 @@ function FormLogin() {
 
             <Espaco height="13px" />
 
+        <div style={{ position: 'relative', display: 'inline-block' }}>
             <InputBox
-                onChange={(e) => setPassword(e.target.value)} 
-                type='password'>
+                onChange={(e) => setPassword(e.target.value)}
+                type={senhaVisivel ? 'text' : 'password'}
+            >
                 Senha
             </InputBox>
+            <button
+                type="button"
+                onClick={toogleSenhaVisivel}
+                style={{
+                position: 'absolute',
+                right: '5px',
+                top: '12px',
+                border: 'none',
+                background: 'none',
+                cursor: 'pointer',
+                }}
+            >
+                {senhaVisivel ? <IoEye size={25} /> : <IoEyeOff size={25} />}
+            </button>
+        </div>
 
             <Espaco height="25px" />
             

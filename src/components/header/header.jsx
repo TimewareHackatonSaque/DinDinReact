@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import * as C from './styled';  // Corrigido para 'styled'
-import { FaUserAlt, FaCog, FaEye, FaEyeSlash } from 'react-icons/fa';  // Ícones do react-icons
+import { FaCog, FaEye, FaEyeSlash, FaUserAlt } from 'react-icons/fa'; // Ícones do react-icons
 import imagem from '../../imagens/logo.png';
-import TextLine from '../textLine/textLine';
+import { NavLinkStyled } from '../footer/styled';
 import ImgLogin from '../img/imgLogin';
+import TextLine from '../textLine/textLine';
+import * as C from './styled'; // Corrigido para 'styled'
 
 const Header = () => {
   const [showSaldo, setShowSaldo] = useState(false);
@@ -18,12 +19,15 @@ const Header = () => {
           <ImgLogin image={imagem} />
         </C.LogoWrapper>
 
-        <C.BtnRight>
-          <C.IconWrapper>
-            <FaUserAlt size={24} color="white" />  {/* Ícone de usuário */}
-          </C.IconWrapper>
-          <FaCog size={24} color="white" />  {/* Ícone de configurações */}
-        </C.BtnRight>
+        <NavLinkStyled to="/perfil">
+          <C.BtnRight>
+            <C.IconWrapper >
+              <FaUserAlt size={24} color="white" />  {/* Ícone de usuário */}
+            </C.IconWrapper>
+            <FaCog size={24} color="white" />  {/* Ícone de configurações */}
+          </C.BtnRight>
+        </NavLinkStyled>
+        
       </C.Row>
 
       {/* Segunda linha com saldo e ícone de visualização */}
