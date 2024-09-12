@@ -61,7 +61,7 @@ function FormCredito({ valorEmprestimo, parcelas, valorParcela, cet, image }) {
         </TextLine>
 
         <TextLine fontWeight="400" fontSize="18px">
-          {parcelasNumber}x de R$ {valorParcelaNumber.toFixed(2)}
+          {parcelasNumber}x de R$ {formatCurrency(valorParcelaNumber)}
         </TextLine>
 
         <LineGradiente
