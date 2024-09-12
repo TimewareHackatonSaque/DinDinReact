@@ -16,7 +16,7 @@ function Credito() {
 
             
             <div>
-                <Link to="/home">  {/* Este link irá redirecionar para a home */}
+                <Link to="/simulador">  {/* Este link irá redirecionar para a simulador */}
                 <IconLeft margin="29px 0px 0px 32px" fontSize="24px" height="24px" />
                 </Link>
                     
