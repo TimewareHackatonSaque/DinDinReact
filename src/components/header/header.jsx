@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaCog, FaEye, FaEyeSlash, FaUserAlt } from 'react-icons/fa'; // Ícones do react-icons
 import imagem from '../../imagens/logo.png';
 import { NavLinkStyled } from '../footer/styled';
@@ -9,6 +9,18 @@ import * as C from './styled'; // Corrigido para 'styled'
 const Header = () => {
   const [showSaldo, setShowSaldo] = useState(false);
   const [saldo] = useState(1204.35);  // Mantém o mock do saldo
+
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const parsedUser = JSON.parse(storedUser);
+      if (parsedUser.user) {
+        setUserName(parsedUser.user.nome || 'Visitante'); // Define 'Visitante' se o nome não estiver disponível
+      }
+    }
+  }, []);
 
   return (
     <C.Header>
@@ -34,7 +46,7 @@ const Header = () => {
       <C.Row>
         <C.SaldoValue>
           <TextLine fontFamily="Poppins, sans-serif" fontSize="16px" color="#FFFFFF" fontWeight="400">
-            Bem vindo(a) ao DogDindin
+            Bem vindo(a) ao {userName}
           </TextLine>
           <br />
           {showSaldo

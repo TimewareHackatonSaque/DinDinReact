@@ -12,6 +12,10 @@ function FormCredito({ valorEmprestimo, parcelas, valorParcela, cet, image }) {
   // Estado para controlar a visibilidade do modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const valorEmprestimoNumber = Number(valorEmprestimo);
+  const valorParcelaNumber = Number(valorParcela);
+  const parcelasNumber = Number(parcelas);
+
   const solicitarEmprestimo = () => {
     alert(`Solicitando empréstimo de R$ ${valorEmprestimo}`);
   };
@@ -24,6 +28,14 @@ function FormCredito({ valorEmprestimo, parcelas, valorParcela, cet, image }) {
   // Função para fechar o modal
   const fecharModal = () => {
     setIsModalOpen(false);
+  };
+
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    }).format(value);
   };
 
   return (
@@ -45,11 +57,11 @@ function FormCredito({ valorEmprestimo, parcelas, valorParcela, cet, image }) {
         <Espaco height="10px"></Espaco>
 
         <TextLine fontWeight="700" fontSize="27px" color="#373737" margin="0px">
-          Valor R$ {valorEmprestimo.toFixed(2)}
+          Valor {formatCurrency(valorEmprestimoNumber)}
         </TextLine>
 
         <TextLine fontWeight="400" fontSize="18px">
-          {parcelas}x de R$ {valorParcela.toFixed(2)}
+          {parcelasNumber}x de R$ {valorParcelaNumber.toFixed(2)}
         </TextLine>
 
         <LineGradiente

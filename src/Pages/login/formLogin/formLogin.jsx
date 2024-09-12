@@ -17,15 +17,41 @@ function FormLogin() {
 
     const navigate = useNavigate();
 
-    /*const HandleSubmit = (email, password, event) => {
-        event.preventDefault();
+    async function handleSubmit(e) {
+        e.preventDefault();
+        
         if (!email || !password) {
-            setError("Informe o email e/ou a senha");
+          setError("Informe o email e/ou a senha");
+          return;
         }
-    };*/
+      
+        try {
+          const response = await fetch('http://localhost:3001/users/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+      
+          if (response.ok) {
+            const data = await response.json();
+            localStorage.setItem('user', JSON.stringify(data));
+            console.log('Login bem-sucedido:', data);
+            navigate('/home');
+          } else {
+            const errorData = await response.json();
+            setError('apapapa');
+          }
+        } catch (error) {
+          console.error('Erro de conexão:', error);
+          setError('Erro de conexão com o servidor.');
+        }
+      }
+
 
     return (
-        <C.FormLogin>
+        <C.FormLogin onSubmit={handleSubmit}>
             <InputBox 
                 onChange={(e) => setEmail(e.target.value)} 
                 type='email'>
@@ -46,14 +72,12 @@ function FormLogin() {
 
             <Espaco height="25px" />
             
-            <Link to="/home">  {/* Link para a Home ao clicar no botão "Entrar" */}
-                <ButtonAll /*</Link>onClick={(e) => HandleSubmit(email, password, e)}*/
-                    backgroundColor="#048F44"
-                    onClick={(e) => navigate("/home")}
-                >
-                    Entrar
-                </ButtonAll>
-            </Link>
+            <ButtonAll
+                type="submit"
+                backgroundColor="#048F44"
+            >
+                Entrar
+            </ButtonAll>
 
             <Espaco height="5px" />
 

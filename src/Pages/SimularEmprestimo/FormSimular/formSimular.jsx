@@ -6,64 +6,68 @@ import Espaco from '../../../components/space/space';
 import TextLine from '../../../components/textLine/textLine';
 import * as C from './styled';
 
-function FormSimular(){
+function FormSimular() {
   const [error, setError] = useState('');
   const [valorEmprestimo, setValorEmprestimo] = useState('');
-  const [ofertas, setOfertas] = useState([]);
-  const [selectedIndex, setSelectedIndex] = useState('');
-  const buttonLabels = ['6x', '12x', '18x', '24x', '30x', '36x', '60x', '84x'];
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const buttonLabels = [6, 12, 18, 24, 30, 36, 60, 84];
   const navigate = useNavigate();
 
   const handleClick = (index) => {
     setSelectedIndex(index);
   };
 
-  console.log(valorEmprestimo)
-
   const handleInputChange = (e) => {
     const numericValue = e.target.value.replace(/\D/g, '');
-    
-    setValorEmprestimo(numericValue);
+    setValorEmprestimo(Number(numericValue));
   };
 
+
   const consultarOfertas = async (e) => {
-    e.preventDefault()
-    if(valorEmprestimo <= 15000 || valorEmprestimo >= 10000000){
-      setError("O valor deve ser entre 150,00 e 100.000,00")
+    e.preventDefault();
+
+    if (valorEmprestimo < 150 || valorEmprestimo > 100000) {
+      setError('O valor deve ser entre 150,00 e 100.000,00');
       return;
     }
-    
-    try{
-      const response = await fetch('https://apiv2-dev.jurosbaixos.com.br /emprestimos/sem-garantia/simulacao/ultimas',
-      {
+
+    const userId = JSON.parse(localStorage.getItem('user')).user.id;
+    const parcelas = buttonLabels[selectedIndex];
+
+    try {
+      const url = new URL('http://localhost:3001/loans/simulate');
+      url.searchParams.append('userId', userId);
+      url.searchParams.append('loanAmount', valorEmprestimo);
+      url.searchParams.append('numberOfInstallments', parcelas);
+
+      const response = await fetch(url.toString(), {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Bearer': '',
         },
-        /*body: JSON.stringify({
-          valorEmprestimo: valorEmprestimo,
-          parcelas: buttonLabels[selectedIndex],
-        }),*/
       });
-      if(!response.ok){
+
+      if (!response.ok) {
         throw new Error('Erro na requisição');
       }
 
       const data = await response.json();
-      setOfertas(data.ofertas);
 
-      navigate('/credito', {state: {ofertas: data.ofertas}})
-    }
-    catch (err){
+      console.log(data)
+      
+      // Navegar para a página de crédito e passar os dados como estado
+      navigate('/credito', { state: { ofertas: data } });
+
+    } catch (err) {
       console.error('Erro ao consultar ofertas:', err);
+      setError('Ocorreu um erro ao consultar as ofertas.');
     }
   };
 
-  return(
+  return (
     <C.FormBody>
       <C.DivOpcoes>
-        <Espaco height="30px"/>
+        <Espaco height="30px" />
         <TextLine 
           fontFamily="Nunito, sans-serif"
           fontWeight="700"
@@ -71,11 +75,11 @@ function FormSimular(){
           color="#000000"
           margin="0px 20px"
         >
-          Qual o valor que você deseja <br/>
+          Qual o valor que você deseja <br />
           solicitar?
         </TextLine>
         
-        <Espaco height="20px"/>
+        <Espaco height="20px" />
 
         <C.DivInput>
           <InputBox
@@ -85,17 +89,11 @@ function FormSimular(){
             fontSize="18px"
             padding="13px 10px 13px 10px"
             type="text"
-            value={new Intl.NumberFormat('pt-BR', {
-              style: 'currency',
-              currency: 'BRL'
-              }).format(valorEmprestimo / 100)}
-            onChange={(e) => handleInputChange(e)}
+            value={valorEmprestimo}
+            onChange={handleInputChange}
           >
             R$
           </InputBox>
-
-          
-          
         </C.DivInput>
 
         <TextLine
@@ -109,7 +107,7 @@ function FormSimular(){
           O valor pode ser de R$ 150,00 à R$ 100.000,00
         </TextLine>
 
-        <Espaco height="30px"/>
+        <Espaco height="30px" />
 
         <TextLine
           fontFamily="Nunito, sans-serif"
@@ -118,11 +116,11 @@ function FormSimular(){
           color="#000000"
           margin="0px 20px"
         >
-          Como você gostaria de parcelar o <br/>
+          Como você gostaria de parcelar o <br />
           pagamento?
         </TextLine>
 
-        <Espaco height="20px"/>
+        <Espaco height="20px" />
 
         <C.SectionX>
           {buttonLabels.map((label, index) => (
@@ -144,16 +142,14 @@ function FormSimular(){
               isSelected={selectedIndex === index}
               onClick={() => handleClick(index)}
             >
-              {label}
+              {label}x
             </ButtonAll>
           ))}
-
-          
         </C.SectionX>
-        <Espaco height="35px"/>
+        <Espaco height="35px" />
       </C.DivOpcoes>
 
-        <Espaco height="10px"/>
+      <Espaco height="10px" />
       <ButtonAll 
         backgroundColor="#048F44" 
         fontFamily="Nunito, sans-serif" 
@@ -166,8 +162,7 @@ function FormSimular(){
 
       <TextLine>{error}</TextLine>
     </C.FormBody>
-    
-  )
+  );
 }
 
-export default FormSimular
+export default FormSimular;
