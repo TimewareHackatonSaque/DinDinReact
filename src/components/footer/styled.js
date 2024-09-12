@@ -3,14 +3,14 @@ import { NavLink as RouterNavLink } from 'react-router-dom';  // Certifique-se d
 
 // Estilo do container do Footer
 export const FooterContainer = styled.footer`
-  background-color: #27ae60;
+  background-color: #048F44;
   border-radius: 23px 23px 0 0;  /* Aplica o border-radius corretamente nos cantos superiores */
   padding: 10px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,15 +61,15 @@ export const SearchLabelWrapper = styled.div`
 
 // Círculo laranja para a lupa
 export const SearchWrapper = styled.div`
-  background-color: #FF8300;
-  width: 70px;
-  height: 70px;
+  background-color: #F6811D;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: -35px;  /* Mantém o círculo saindo metade para fora */
+  top: -8px;  /* Mantém o círculo saindo metade para fora */
   z-index: 2;
 
   @media (min-width: 768px) {

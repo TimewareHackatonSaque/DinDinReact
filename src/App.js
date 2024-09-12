@@ -7,6 +7,7 @@ import Home from './Pages/Home/home';
 import Login from './Pages/login/login'; // Importando a página Login
 import Perfil from './Pages/Perfil/perfil';
 import Simulador from './Pages/SimularEmprestimo/Simulador';
+import Historico from './Pages/Historico/Historico';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function Layout() {
         <Route path="/simulador" element={<Simulador />} />
         <Route path="/credito" element={<Credito />} />  
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/historico" element={<Historico />} />
       </Routes>
 
       {/* Renderiza o Footer apenas se estiver na página Home */}

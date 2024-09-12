@@ -45,7 +45,7 @@ const Home = () => {
         {/* Grid com os Tiles */}
         <S.TileGrid>
           <Tile redirect="/simulador" icon={<BsFiles />} text="Simular Empréstimo" />
-          <Tile icon={<IoFolderOpenOutline />} text="Histórico de Cotações" />
+          <Tile redirect="/historico" icon={<IoFolderOpenOutline />} text="Histórico de Cotações" />
           <Tile icon={<IoEyeOutline />} text="Meus Empréstimos" />
           <Tile icon={<IoWalletOutline />} text="Minha Carteira" />
           <Tile icon={<IoHeadsetOutline />} text="Suporte e dúvidas" />
