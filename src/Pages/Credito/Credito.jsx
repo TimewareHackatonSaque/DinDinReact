@@ -4,7 +4,9 @@ import IconLeft from "../../components/IconLeft/left";
 import LineGradiente from "../../components/line/line";
 import Espaco from "../../components/space/space";
 import TextLine from '../../components/textLine/textLine';
+import logo from '../../imagens/logo.png';
 import FormCredito from "./FormCredito/FormCredito";
+
 import * as C from './styled';
 
 function Credito() {
@@ -38,15 +40,17 @@ function Credito() {
             <Espaco height="30px" />
 
             <C.DivOpcoes>
+                    
                     {ofertas.length > 0 ? (
                     ofertas.map((oferta, index) => (
+                        
                     <FormCredito
                         key={index}
                         valorEmprestimo={oferta.loanAmount}
                         parcelas={oferta.numberOfInstallments}
                         valorParcela={oferta.installment}
                         cet={oferta.annualCET}
-                        image={oferta.image} 
+                        image={logo} 
                     />
                     ))
                 ) : (

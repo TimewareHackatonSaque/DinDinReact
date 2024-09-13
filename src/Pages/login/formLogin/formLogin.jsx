@@ -41,7 +41,7 @@ function FormLogin() {
             navigate('/home');
           } else {
             const errorData = await response.json();
-            setError('apapapa');
+            setError('Login não localizado');
           }
         } catch (error) {
           console.error('Erro de conexão:', error);

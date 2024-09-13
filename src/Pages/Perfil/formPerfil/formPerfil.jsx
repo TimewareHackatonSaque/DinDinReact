@@ -74,6 +74,7 @@ function FormPerfil() {
 
       <TextLine margin="0px">Telefone</TextLine>
       <InputBox
+        maxlength={11}
         name="telefone"
         onChange={handleChange}
         placeholder="Telefone"

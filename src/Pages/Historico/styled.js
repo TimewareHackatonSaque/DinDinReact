@@ -38,7 +38,6 @@ export const CardHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
 `;
 
@@ -51,7 +50,7 @@ export const Instituicao = styled.h2`
 export const CardBody = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 5px;
 `;
 
 export const ValorTotal = styled.p`

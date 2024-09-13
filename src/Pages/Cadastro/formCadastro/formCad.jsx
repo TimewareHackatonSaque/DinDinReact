@@ -67,7 +67,7 @@ function FormCad() {
 
       <Espaco height="15px" />
 
-      <InputBox value={telefone} onChange={(e) => setTelefone(e.target.value)}>
+      <InputBox maxlength={11} value={telefone} onChange={(e) => setTelefone(e.target.value)}>
         Telefone
       </InputBox>
 

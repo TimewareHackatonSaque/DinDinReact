@@ -93,6 +93,7 @@ function Historico() {
             ) : (
             <p>Nenhuma simulação encontrada.</p>
             )}
+            
         </C.Card>
       </div>
 
