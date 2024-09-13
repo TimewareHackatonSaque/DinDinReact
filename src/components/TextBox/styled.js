@@ -12,5 +12,6 @@ export const InputText = styled.input`
   font-family: ${({ fontFamily }) => fontFamily};
   font-size: ${({fontSize}) => fontSize};
   justify-content: ${({ justFy }) => justFy};
-  display:${({ display }) => display}
+  display:${({ display }) => display};
+  maxlength:${({ maxlength }) => maxlength};
 `;

@@ -4,6 +4,7 @@ function ButtonAll({ cursor, isSelected, type, colorSelect, margin, color,border
   return (
     <div>
       <C.ButtonAll 
+        
         cursor={cursor}
         onClick={onClick} 
         backgroundColor={backgroundColor}

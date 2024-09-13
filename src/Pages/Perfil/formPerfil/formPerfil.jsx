@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import { ButtonAll } from '../../../components/button/styled';
 import Espaco from '../../../components/space/space';
 import InputBox from '../../../components/TextBox/TextBox';
+import TextLine from '../../../components/textLine/textLine';
 
 function FormPerfil() {
   const [user, setUser] = useState({
+    id:'',
     nome: '',
     email: '',
     cpf: '',
@@ -36,50 +38,58 @@ function FormPerfil() {
 
   return (
     <form>
+      <TextLine margin="0px">{user.id}</TextLine>
+      <TextLine margin="0px">Nome</TextLine>
       <InputBox
         name="nome"
-        value={user.nome}
         onChange={handleChange}
         placeholder="Nome"
-      />
-      <Espaco height="30px" />
+      >
+        {user.nome}
+      </InputBox>
+      <Espaco height="5px" />
 
+      <TextLine margin="0px">Email</TextLine>
       <InputBox
-        
         name="email"
-        value={user.email}
         onChange={handleChange}
         placeholder="Email"
         type="email"
-        disabled
-      />
-      <Espaco height="30px" />
+      >
+        {user.email}
+      </InputBox>
+      
+      <Espaco height="5px" />
 
+      <TextLine margin="0px">CPF</TextLine>
       <InputBox
-        
+        maxlength={11}
         name="cpf"
-        value={user.cpf}
         onChange={handleChange}
         placeholder="CPF"
-      />
-      <Espaco height="30px" />
+      >
+        {user.cpf}
+      </InputBox>
+      <Espaco height="5px" />
 
+      <TextLine margin="0px">Telefone</TextLine>
       <InputBox
         name="telefone"
-        value={user.telefone}
         onChange={handleChange}
         placeholder="Telefone"
-      />
-      <Espaco height="30px" />
+      >
+        {user.telefone}
+      </InputBox>
+      <Espaco height="5px" />
 
+      <TextLine margin="0px">Senha</TextLine>
       <InputBox
         name="senha"
-        value={user.senha}
         onChange={handleChange}
         placeholder="Senha"
         type="password"
       />
-      <Espaco height="30px" />
+      <Espaco height="20px" />
 
       <ButtonAll
         backgroundColor="#048F44"
@@ -89,6 +99,8 @@ function FormPerfil() {
       >
         Atualizar
       </ButtonAll>
+
+      <Espaco height="40px" />
     </form>
   );
 }

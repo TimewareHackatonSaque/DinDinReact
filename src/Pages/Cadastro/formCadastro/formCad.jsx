@@ -79,7 +79,7 @@ function FormCad() {
 
       <Espaco height="15px" />
 
-      <InputBox value={cpf} onChange={(e) => setCpf(e.target.value)}>
+      <InputBox maxlength={11} value={cpf} onChange={(e) => setCpf(e.target.value)}>
         CPF
       </InputBox>
 
